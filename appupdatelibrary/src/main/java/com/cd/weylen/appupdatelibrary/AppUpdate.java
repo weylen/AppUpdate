@@ -70,7 +70,7 @@ public class AppUpdate {
     public void show(){
         String text = TextUtils.isEmpty(message) ? "发现新版本，请立即升级" : message;
         if (isMust){
-            text += "<br/><br/><font color='#f00'>提示：您必须更新之后才能继续使！</font>";
+            text += "<br/><br/><font color='red'>提示：您必须更新之后才能继续使用！</font>";
         }
         AlertDialog dialog = new AlertDialog.Builder(context)
                 .setTitle("发现新版本")
