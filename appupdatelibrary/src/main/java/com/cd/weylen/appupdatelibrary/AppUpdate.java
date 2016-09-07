@@ -70,7 +70,7 @@ public class AppUpdate {
     public void show(){
         String text = TextUtils.isEmpty(message) ? "发现新版本，请立即升级" : message;
         if (isMust){
-            text += "<br/><br/><font color='#000'>提示：您必须更新之后才能继续使！</font>";
+            text += "<br/><br/><font color='#f00'>提示：您必须更新之后才能继续使！</font>";
         }
         AlertDialog dialog = new AlertDialog.Builder(context)
                 .setTitle("发现新版本")
@@ -138,7 +138,7 @@ public class AppUpdate {
                 if (TextUtils.isEmpty(path)){
                     downloadDialog.setTitle("下载失败");
                     if (onUpdateCallbackListener != null){
-                        onUpdateCallbackListener.downloadFailure();
+                        onUpdateCallbackListener.downloadFailure(isMust);
                     }
                     return;
                 }
@@ -171,7 +171,7 @@ public class AppUpdate {
         /**
          * 下载失败
          */
-        void downloadFailure();
+        void downloadFailure(boolean isMust);
     }
 
     public static class Builder{
