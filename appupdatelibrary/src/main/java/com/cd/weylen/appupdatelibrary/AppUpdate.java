@@ -1,11 +1,11 @@
 package com.cd.weylen.appupdatelibrary;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
+import android.support.v7.app.AlertDialog;
 import android.text.Html;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -28,7 +28,7 @@ public class AppUpdate {
     private OnUpdateCallbackListener onUpdateCallbackListener;
 
     public AppUpdate(Context context){
-
+        this.context = context;
     }
 
     public String getDownloadUrl() {
